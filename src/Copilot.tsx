@@ -8,11 +8,13 @@ import "./index.css";
 
 export type CopilotProps = {
   apiKey: string;
+  copilot: string;
 };
 
-const Copilot = ({ apiKey }: CopilotProps) => {
+const Copilot = ({ apiKey, copilot }: CopilotProps) => {
   const {
     apiKey: storedApiKey,
+
     actions: { setApiKey },
   } = useAuthStore();
 
@@ -29,7 +31,7 @@ const Copilot = ({ apiKey }: CopilotProps) => {
           <div id="tooltip-container" className="relative z-[999999]"></div>
           <div id="drawer-container" className="relative z-[999999]"></div>
           <div id="modal-container" className="relative z-[999999]"></div>
-          {storedApiKey && <ChatArea />}
+          {storedApiKey && <ChatArea copilot={copilot} />}
         </div>
       </QueryProvider>
     </ApiProvider>

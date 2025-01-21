@@ -32,7 +32,7 @@ import ChatResponse from "./ChatResponse";
 import Spinner from "./Spinner";
 import UserMessage from "./UserMessage";
 
-const ChatArea = () => {
+const ChatArea = ({ copilot }: { copilot: string }) => {
   const { data: user } = useGetUser();
 
   const {
@@ -66,8 +66,6 @@ const ChatArea = () => {
     threadId,
     actions: { setSelectedCopilot, setThreadId },
   } = useCopilotStore();
-
-  const copilot = "hello";
 
   // Effect: Set selected copilot from URL params
   useEffect(() => {
