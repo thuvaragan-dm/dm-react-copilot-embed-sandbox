@@ -8,6 +8,7 @@ import { useAuthStore } from "./store/authStore";
 export type CopilotProps = {
   apiKey: string;
 };
+
 const Copilot = ({ apiKey }: CopilotProps) => {
   const {
     apiKey: storedApiKey,
