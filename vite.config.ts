@@ -1,9 +1,9 @@
-import react from "@vitejs/plugin-react";
-import path from "path";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import path from "path";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
-// https://vite.dev/config/
 export default defineConfig({
   build: {
     lib: {
@@ -20,8 +20,6 @@ export default defineConfig({
         },
       },
     },
-    sourcemap: true,
-    emptyOutDir: true,
   },
-  plugins: [react(), dts()],
+  plugins: [react(), dts(), cssInjectedByJsPlugin()], // Inject CSS into JS
 });
