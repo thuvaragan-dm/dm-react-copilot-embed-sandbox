@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import path from "path";
-import cssExportPlugin from "vite-plugin-css-export"; // Import the plugin
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
   build: {
@@ -21,5 +21,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react(), dts(), cssExportPlugin()],
+  plugins: [react(), dts(), cssInjectedByJsPlugin()],
 });
