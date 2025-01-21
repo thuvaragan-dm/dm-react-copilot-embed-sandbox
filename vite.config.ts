@@ -1,14 +1,13 @@
-import react from "@vitejs/plugin-react";
-import path from "path";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import path from "path";
 
-// https://vite.dev/config/
 export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "./index.ts"),
-      name: "react-copilot-embed-sandbox",
+      name: "react-copilot-embed-sandbox", // This affects the CSS filename
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
@@ -20,8 +19,6 @@ export default defineConfig({
         },
       },
     },
-    sourcemap: true,
-    emptyOutDir: true,
   },
   plugins: [react(), dts()],
 });
