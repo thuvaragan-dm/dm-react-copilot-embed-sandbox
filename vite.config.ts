@@ -2,9 +2,12 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import path from "path";
-import cssExportPlugin from "vite-plugin-css-export"; // Import the plugin
+import cssExportPlugin from "vite-plugin-css-export";
 
 export default defineConfig({
+  define: {
+    "process.env": {}, // 👈 This ensures `process` is defined
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, "./index.ts"),
