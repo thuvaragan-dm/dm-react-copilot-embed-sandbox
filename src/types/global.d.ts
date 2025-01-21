@@ -1,0 +1,9 @@
+declare module "api/*";
+declare module "components/*";
+declare module "configs/*";
+declare module "hooks/*";
+declare module "providers/*";
+declare module "store/*";
+declare module "styles/*";
+declare module "types/*";
+declare module "utilities/*";

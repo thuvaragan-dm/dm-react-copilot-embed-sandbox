@@ -5,7 +5,10 @@ import { ApiProvider } from "./providers/ApiProvider";
 import QueryProvider from "./providers/QueryProvider";
 import { useAuthStore } from "./store/authStore";
 
-const Copilot = ({ apiKey }: { apiKey: string }) => {
+export type CopilotProps = {
+  apiKey: string;
+};
+const Copilot = ({ apiKey }: CopilotProps) => {
   const {
     apiKey: storedApiKey,
     actions: { setApiKey },
