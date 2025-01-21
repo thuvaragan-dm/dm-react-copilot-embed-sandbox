@@ -1,4 +1,4 @@
-import "./src/index.css";
+import "./dist/react-copilot-embed-sandbox.css";
 
 // Import and export your main component
 import Copilot from "./src/Copilot";
