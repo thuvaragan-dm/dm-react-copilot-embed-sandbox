@@ -4,6 +4,7 @@ import AlertProvider from "./providers/AlertProvider";
 import { ApiProvider } from "./providers/ApiProvider";
 import QueryProvider from "./providers/QueryProvider";
 import { useAuthStore } from "./store/authStore";
+import "./index.css";
 
 export type CopilotProps = {
   apiKey: string;
