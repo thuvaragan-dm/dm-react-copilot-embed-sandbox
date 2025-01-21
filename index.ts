@@ -1,3 +1,4 @@
+import "./src/index.css";
 // Import and export your main component
 import Copilot from "./src/Copilot";
 
