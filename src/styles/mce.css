@@ -1,0 +1,49 @@
+.tox .tox-collection--list .tox-collection__item--active {
+  @apply !rounded-md !bg-skin-primary !text-white;
+}
+
+.tox-collection__group {
+  @apply !py-0 !pb-0.5;
+}
+
+.tox-menu {
+  @apply !rounded-xl !p-1.5;
+}
+
+.tox-mbtn--active {
+  @apply !bg-skin-secondary !text-skin-primary;
+}
+
+.tox-mbtn:hover:not(:disabled):not(.tox-mbtn--active) {
+  @apply !bg-skin-secondary focus:!bg-skin-secondary;
+}
+
+.tox-mbtn:focus:not(:disabled) {
+  @apply !bg-skin-secondary focus:!bg-skin-secondary;
+}
+.tox-tbtn:focus:not(:disabled) {
+  @apply !bg-skin-secondary focus:!bg-skin-secondary;
+}
+
+.tox-tbtn {
+  @apply hover:!bg-skin-secondary focus:!fill-skin-primary active:!fill-skin-primary;
+}
+
+.tox .tox-tbtn--active,
+.tox .tox-tbtn--enabled svg,
+.tox .tox-tbtn--enabled:focus,
+.tox .tox-tbtn--enabled:hover {
+  @apply !border-0 !bg-skin-secondary !fill-skin-primary !text-skin-primary focus:!fill-skin-primary active:!fill-skin-primary;
+}
+
+.tox .tox-insert-table-picker .tox-insert-table-picker__selected {
+  @apply !border-skin-primary !bg-skin-secondary;
+}
+
+.tox-sidebar-wrap {
+  @apply !bg-gray-100 !px-5;
+}
+
+.tox-edit-area {
+  @apply !mx-auto !my-5 !max-w-screen-lg !rounded-xl !bg-white !ring-2 !ring-gray-800/10;
+}

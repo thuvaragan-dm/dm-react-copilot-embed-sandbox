@@ -1,0 +1,67 @@
+/* 
+primary-bg - #421CA4 rgb(66, 28, 164)
+secondary-bg - #E2D7FF rgb(226, 215, 255) 
+
+gradient-from - #ffaa40 rgb(255, 170, 64)
+gradient-to - #421CA4 rgb(66, 28, 164)
+gradient-via - #ffaa40 rgb(255, 170, 64)
+
+btn-text - #ffffff rgb(255, 255, 255)
+btn-ring - #4A1FB7 rgb(74, 31, 183)
+btn hover - #4A1FB7 rgb(74, 31, 183)
+btn-active = #4A1FB7 rgb(74, 31, 183)
+btn-disabled-bg - #C9C9C9 rgb(201, 201, 201)
+btn-disabled-text - #ffffff rgb(255, 255, 255)
+*/
+
+.dm {
+  --primary-bg: 66, 28, 164;
+  --secondary-bg: 226, 215, 255;
+  --gradient-from: 255, 170, 64;
+  --gradient-via: 66, 28, 164;
+  --gradient-to: 255, 170, 64;
+  --primary-bg-dark: 10, 0, 17;
+}
+
+.dm .btn-primary {
+  --btn-bg-color: 66, 28, 164;
+  --btn-text-color: 255, 255, 255;
+  --btn-spinner-color: 255, 255, 255;
+  --btn-bg-hover-color: 74, 31, 183;
+  --btn-bg-active-color: 74, 31, 183;
+  --btn-ring-color: 74, 31, 183;
+  --btn-disabled-bg-color: 201, 201, 201;
+  --btn-disabled-text-color: 255, 255, 255;
+}
+
+.dm .btn-ghost {
+  --btn-bg-color: transparent;
+  --btn-text-color: 31, 41, 55;
+  --btn-spinner-color: 31, 41, 55;
+  --btn-bg-hover-color: transparent;
+  --btn-bg-active-color: transparent;
+  --btn-ring-color: 209, 213, 219;
+  --btn-disabled-bg-color: 201, 201, 201;
+  --btn-disabled-text-color: 255, 255, 255;
+}
+
+.dm .btn-unstyled {
+  --btn-bg-color: 255, 255, 255;
+  --btn-text-color: 0, 0, 0;
+  --btn-spinner-color: 0, 0, 0;
+  --btn-bg-hover-color: transparent;
+  --btn-bg-active-color: transparent;
+  --btn-ring-color: transparent;
+  --btn-disabled-bg-color: 201, 201, 201;
+  --btn-disabled-text-color: 255, 255, 255;
+}
+
+.dm .btn-danger {
+  --btn-bg-color: 239, 68, 68;
+  --btn-text-color: 255, 255, 255;
+  --btn-spinner-color: 255, 255, 255;
+  --btn-bg-hover-color: 220, 38, 38;
+  --btn-bg-active-color: 220, 38, 38;
+  --btn-ring-color: 220, 38, 386;
+  --btn-disabled-color: 252, 165, 165;
+}

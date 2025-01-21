@@ -1,0 +1,7 @@
+@import url("./styles/themes/dm.css");
+@import url("./styles/mce.css");
+@import url("./styles/custom-scrollbar.css");
+@import url("./styles/chat-response.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

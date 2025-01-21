@@ -1,0 +1,6 @@
+pre > div > div {
+  border-radius: 1rem !important;
+  border-top-left-radius: 0rem !important;
+  border-top-right-radius: 0rem !important;
+  margin: 0 !important;
+}
