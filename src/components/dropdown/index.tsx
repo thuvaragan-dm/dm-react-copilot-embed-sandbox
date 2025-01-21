@@ -1,40 +1,27 @@
+import DropdownRoot from "./DropdownRoot"; // Assuming DropdownRoot exports its props
 import DropdownButton from "./DropdownButton";
 import DropdownMenu from "./DropdownMenu";
 import DropdownMenuItem from "./DropdownMenuItem";
-import DropdownRoot from "./DropdownRoot";
-import DropdownSeparator from "./DropdownSeparator";
+import * as RadixDropdownMenu from "@radix-ui/react-dropdown-menu";
 
-export default Object.assign(DropdownRoot, {
-  Item: DropdownMenuItem,
+interface DropdownProps extends RadixDropdownMenu.DropdownMenuProps {
+  children: React.ReactNode;
+  open: boolean;
+  onOpenChange: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+// Define the Dropdown interface
+interface IDropdown extends React.FC<DropdownProps> {
+  Button: typeof DropdownButton;
+  Menu: typeof DropdownMenu;
+  Item: typeof DropdownMenuItem;
+}
+
+// Enhance DropdownRoot with additional components
+const Dropdown: IDropdown = Object.assign(DropdownRoot, {
   Button: DropdownButton,
   Menu: DropdownMenu,
-  Divider: DropdownSeparator,
-});
+  Item: DropdownMenuItem,
+}) as IDropdown;
 
-/* 
- Dependencies:
- @radix-ui/react-dialog - Radix UI components for dialog
- tailwindcss - Utility-first CSS framework for styling
- framer-motion - Motion library for React to animate the components
-
- Install dependencies:
- npm install @radix-ui/react-dialog tailwindcss framer-motion
-
-      <Dropdown>
-        <Dropdown.Button>
-          Open Menu
-        </Dropdown.Button>
-        <Dropdown.Menu>
-          <Dropdown.Item onSelect={() => console.log('Item 1 clicked')}>
-            Item 1
-          </Dropdown.Item>
-          <Dropdown.Item onSelect={() => console.log('Item 2 clicked')}>
-            Item 2
-          </Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item onSelect={() => console.log('Item 3 clicked')}>
-            Item 3
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-*/
+export default Dropdown;

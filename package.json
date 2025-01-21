@@ -19,6 +19,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thuvaragan-dm/dm-react-copilot-embed-sandbox"
+  },
+  "bugs": {
+    "url": "https://github.com/thuvaragan-dm/dm-react-copilot-embed-sandbox/issues"
+  },
+  "homepage": "https://github.com/thuvaragan-dm/dm-react-copilot-embed-sandbox#readme",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
