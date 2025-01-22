@@ -22,6 +22,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "./dist",
+    "rootDir": ".", // Add this line to specify the root directory
 
     /* Bundler mode */
     "moduleResolution": "bundler",

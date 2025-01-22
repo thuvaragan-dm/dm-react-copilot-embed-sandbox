@@ -17,11 +17,9 @@ import { useGetMessages } from "../api/message/useGetMessages";
 import queryClient from "../api/queryClient";
 import { EThread, threadKey } from "../api/thread/config";
 import { useCreateThread } from "../api/thread/useCreateThread";
-import { useGetUser } from "../api/user/useGetUser";
 import cookieKeys from "../configs/cookieKeys";
 import useFileUpload from "../hooks/useFileUpload";
 import useStream, { UseStreamOptions } from "../hooks/useStream";
-import { useAuthStore } from "../store/authStore";
 import { useChatInputStore } from "../store/chatInputStore";
 import { useCopilotStore } from "../store/copilotStore";
 import capitalizeFirstLetter from "../utilities/capitalizeFirstLetter";
@@ -33,18 +31,6 @@ import Spinner from "./Spinner";
 import UserMessage from "./UserMessage";
 
 const ChatArea = ({ copilot }: { copilot: string }) => {
-  const { data: user } = useGetUser();
-
-  const {
-    actions: { setUser },
-  } = useAuthStore();
-
-  useEffect(() => {
-    if (user) {
-      setUser(user);
-    }
-  }, [user]);
-
   const {
     actions: { setCopilots },
   } = useCopilotStore();

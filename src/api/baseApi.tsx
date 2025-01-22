@@ -37,7 +37,7 @@ const toastService = {
 export const createApiClient = (
   baseURL: string,
   getAccessToken: () => string | null,
-  logout: () => void,
+  _logout: () => void,
   options: ApiClientOptions = { responseType: "json" }
 ): AxiosInstance => {
   const api = axios.create({
@@ -63,21 +63,6 @@ export const createApiClient = (
     (response) => response,
     (error: AxiosError) => {
       if (error.response?.status === 401) {
-        logout();
-
-        const path = window.location.pathname;
-        const query = window.location.search;
-
-        const fullPath = path + query;
-
-        if (fullPath.length > 3) {
-          window.location.href = `/login?redirect_to=${encodeURIComponent(
-            fullPath
-          )}`;
-        } else {
-          window.location.href = `/login`;
-        }
-
         toastService.error("Your session has expired. Please log in again.");
       } else if (error.response?.status === 403) {
         toastService.error(
