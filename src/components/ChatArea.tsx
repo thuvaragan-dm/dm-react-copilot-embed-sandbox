@@ -61,7 +61,7 @@ const ChatArea = ({ copilot }: { copilot: string }) => {
       setSelectedCopilot(copilotToSet);
       Cookies.set(
         cookieKeys.PREVIOUSLY_SELECTED_COPILOT,
-        JSON.stringify(copilotToSet)
+        JSON.stringify(copilotToSet),
       );
     }
   }, [copilot, copilots, agents]);
@@ -96,7 +96,7 @@ const ChatArea = ({ copilot }: { copilot: string }) => {
 
   // Fetch messages and tasks
   const { data: messages, isPending: isMessagesLoading } = useGetMessages(
-    threadId || ""
+    threadId || "",
   )(messageKey[EMessage.FETCH_ALL], {
     limit: MESSAGE_LIMIT,
     thread_id: threadId,
@@ -112,7 +112,7 @@ const ChatArea = ({ copilot }: { copilot: string }) => {
       done: setStreamingDone,
       copilot: selectedCopilot?.id,
     }),
-    [selectedCopilot]
+    [selectedCopilot],
   );
 
   // Stream handlers
@@ -169,7 +169,7 @@ const ChatArea = ({ copilot }: { copilot: string }) => {
 
           return oldData;
         }
-      }
+      },
     );
   }, [streamMessage, sources]);
 
@@ -350,7 +350,7 @@ const ChatArea = ({ copilot }: { copilot: string }) => {
                                   </p>
                                 </div>
                               </button>
-                            )
+                            ),
                           )}
                         </div>
                       )}
@@ -379,44 +379,48 @@ const ChatArea = ({ copilot }: { copilot: string }) => {
                     setIsUserScroll(false);
                   }
                 }}
-                className={`scrollbar  w-full flex-1 overflow-y-auto @container`}
+                className={`scrollbar w-full flex-1 overflow-y-auto @container`}
               >
                 <div className="mx-auto w-full max-w-3xl space-y-3 p-5">
                   {messages.pages.map((messageArray) =>
                     messageArray.map((message, idx) => (
-                      <motion.li
-                        key={idx}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        transition={{
-                          default: { duration: 0.15 },
-                          layout: {
-                            type: "spring",
-                            bounce: 0.4,
-                            duaration: 1,
-                          },
-                        }}
-                        className="flex"
-                        style={{
-                          originX: message.sender === "user" ? 1 : 0,
-                        }}
-                      >
-                        <div
-                          className={`flex w-full items-end gap-2 ${
-                            message.sender === "user"
-                              ? "justify-end"
-                              : "flex-row-reverse justify-start"
-                          } `}
-                        >
-                          {message.sender === "user" ? (
-                            <UserMessage message={message.message} />
-                          ) : (
-                            <ChatResponse message={message} />
-                          )}
-                        </div>
-                      </motion.li>
-                    ))
+                      <>
+                        {message.message && (
+                          <motion.li
+                            key={idx}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            transition={{
+                              default: { duration: 0.15 },
+                              layout: {
+                                type: "spring",
+                                bounce: 0.4,
+                                duaration: 1,
+                              },
+                            }}
+                            className="flex"
+                            style={{
+                              originX: message.sender === "user" ? 1 : 0,
+                            }}
+                          >
+                            <div
+                              className={`flex w-full items-end gap-2 ${
+                                message.sender === "user"
+                                  ? "justify-end"
+                                  : "flex-row-reverse justify-start"
+                              } `}
+                            >
+                              {message.sender === "user" ? (
+                                <UserMessage message={message.message} />
+                              ) : (
+                                <ChatResponse message={message} />
+                              )}
+                            </div>
+                          </motion.li>
+                        )}
+                      </>
+                    )),
                   )}
 
                   <AnimatePresence>
